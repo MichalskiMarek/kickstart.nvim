@@ -652,14 +652,14 @@ require('lazy').setup {
       --    you can use this plugin to help you. It even has snippets
       --    for various frameworks/libraries/etc. but you will have to
       --    set up the ones that are useful for you.
-      -- 'rafamadriz/friendly-snippets',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
-
+      require('luasnip/loaders/from_vscode').lazy_load()
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -817,11 +817,10 @@ require('lazy').setup {
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
-  -- Remap for grep string
-  vim.keymap.set('n', '<leader>ps', function()
-    require('telescope.builtin').grep_string { search = vim.fn.input 'Grep > ' }
-  end),
 }
+
+require 'options'
+require 'keymaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et- vim: ts=2 sts=2 sw=2 et

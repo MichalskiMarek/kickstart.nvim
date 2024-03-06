@@ -89,8 +89,10 @@ return {
   {
     'mbbill/undotree',
     keys = {
-      { '<leader>u', vim.cmd.UndotreeToggle, desc = 'toggle undotree' },
+      { '<leader>u', vim.cmd.UndotreeToggle, desc = 'Toggle undotree' },
     },
   },
-  { 'github/copilot.vim' },
+  {
+    'github/copilot.vim',
+  },
 }
