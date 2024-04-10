@@ -18,13 +18,3 @@ vim.keymap.set('n', 'Q', '<nop>', { desc = 'Disable exit vim using Q' })
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format code' })
 
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word under cursor' })
-
-vim.keymap.set('n', '<leader>tt', function()
-  require('neotest').run.run()
-end, { desc = 'Run test under the cursor' })
-vim.keymap.set('n', '<leader>tf', function()
-  require('neotest').run.run()
-end, { desc = 'Run test file' })
-vim.keymap.set('n', '<leader>ts', function()
-  require('neotest').run.run(vim.fn.getcwd())
-end, { desc = 'Run test suite' })
