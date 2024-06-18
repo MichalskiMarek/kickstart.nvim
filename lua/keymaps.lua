@@ -17,4 +17,4 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without yank
 vim.keymap.set('n', 'Q', '<nop>', { desc = 'Disable exit vim using Q' })
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format code' })
 
-vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word under cursor' })
+vim.keymap.set('n', '<leader>rp', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word under cursor' })
